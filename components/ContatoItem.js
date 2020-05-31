@@ -1,23 +1,29 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
-import Cartao from './Cartao';
-import cores from '../cores/cores';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const ContatoItem = (props) => {
-    const { contato } = props;
+import cores from '../cores/cores'
+import medidas from '../medidas/medidas';
 
+const ContatoItem = (props) =>{
     return (
-        <TouchableOpacity onLongPress={() => props.onDelete(contato.item.key)} onPress={props.onAbrirAtualizar}>
-            <Cartao style={styles.contatoInfo}>
-                <Text>{"Nome: " + contato.item.value.contatoNome + "\nTelefone: " + contato.item.value.contatoTelefone}</Text>
-            </Cartao>
+        <TouchableOpacity onPress={props.onPress.bind(this, props.contato)} onLongPress={props.onDelete.bind(this, props.contato.key)}>
+            <View style={styles.itemNaLista}>
+                <Text>#{props.contato.key}</Text>
+                <Text>Nome: {props.contato.nome}</Text>
+                <Text>Celular: {props.contato.celular}</Text>
+            </View>
         </TouchableOpacity>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
-    contatoInfo: {
-        backgroundColor: cores.backgroundCartaoSecundary
+    itemNaLista: {
+        padding: medidas.PEQUENO,
+        backgroundColor: cores.CINZA,
+        borderColor: cores.PRETO,
+        borderWidth: medidas.MINIMO,
+        marginBottom: medidas.PEQUENO,
+        borderRadius: medidas.PEQUENO
     }
 });
 

@@ -1,28 +1,22 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+
+import cores from '../cores/cores'
+import medidas from '../medidas/medidas'
 
 const Cartao = (props) => {
     return (
-        <View style={{ ...styles.cartao, ...props.style }}>
+        <View style={{...estilos.cartao, ...props.estilos}}>
             {props.children}
         </View>
     );
-}
+};
 
-const styles = StyleSheet.create({
+const estilos = StyleSheet.create({
     cartao: {
-        shadowColor: 'black',
-        shadowOffset: {
-            width: 0,
-            height: 2
-        },
-        shadowRadius: 6,
-        shadowOpacity: 0.32,
-        elevation: 4,
-        padding: 12,
-        margin: 4,
-        borderRadius: 8,
-        minWidth: '90%'
+        shadowRadius: medidas.PEQUENO,
+        backgroundColor: cores.BRANCO,
+        padding: medidas.PEQUENO,
     }
 });
 

@@ -1,5 +1,5 @@
 export default {
-    backgroundCartaoPrimary: '#FFF',
-    backgroundCartaoSecundary: '#A0C7BD',
-    backgroundHeaderPrimary: '#000'
+    BRANCO: '#FFFFFF',
+    CINZA: '#CCCCCC',
+    PRETO: '#000000'
 }
